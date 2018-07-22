@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "continuous-delivery-front-demo": {
+    "angular-demo": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/continuous-delivery-front-demo",
+            "outputPath": "dist/angular-demo",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -23,7 +23,8 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "node_modules/bootstrap/dist/css/bootstrap.min.css"
             ],
             "scripts": []
           },
@@ -50,18 +51,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "continuous-delivery-front-demo:build"
+            "browserTarget": "angular-demo:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "continuous-delivery-front-demo:build:production"
+              "browserTarget": "angular-demo:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "continuous-delivery-front-demo:build"
+            "browserTarget": "angular-demo:build"
           }
         },
         "test": {
@@ -95,7 +96,7 @@
         }
       }
     },
-    "continuous-delivery-front-demo-e2e": {
+    "angular-demo-e2e": {
       "root": "e2e/",
       "projectType": "application",
       "architect": {
@@ -103,11 +104,11 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "continuous-delivery-front-demo:serve"
+            "devServerTarget": "angular-demo:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "continuous-delivery-front-demo:serve:production"
+              "devServerTarget": "angular-demo:serve:production"
             }
           }
         },
@@ -123,5 +124,5 @@
       }
     }
   },
-  "defaultProject": "continuous-delivery-front-demo"
+  "defaultProject": "angular-demo"
 }
